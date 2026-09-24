@@ -1,0 +1,47 @@
+name: Veri aynasi
+
+# football-data.co.uk Turkiye'den erisime kapali. Bu is GitHub'in yurt disindaki
+# sunucusunda calisir, ucretsiz yayinlanan CSV dosyalarini indirip bu depoya kaydeder.
+# Oran Analizi uygulamasi dosyalari raw.githubusercontent.com uzerinden okur.
+
+on:
+  schedule:
+    - cron: '0 4,16 * * *'   # her gun 07:00 ve 19:00 (TR saati)
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  ayna:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: CSV dosyalarini indir
+        run: |
+          set -u
+          LIGLER="T1 E0 D1 SP1 I1"
+          Y=$(date -u +%Y); M=$(date -u +%m)
+          if [ "$M" -lt 07 ]; then Y=$((Y-1)); fi
+          for K in 0 1 2 3 4 5 6 7; do
+            S=$(printf '%02d%02d' $(((Y-K)%100)) $(((Y-K+1)%100)))
+            mkdir -p "data/$S"
+            for L in $LIGLER; do
+              # eski sezonlar bir kez indirilir, son iki sezon her seferinde yenilenir
+              if [ -f "data/$S/$L.csv" ] && [ $K -ge 2 ]; then continue; fi
+              if curl -sfL --max-time 60 -o /tmp/f.csv "https://www.football-data.co.uk/mmz4281/$S/$L.csv" && head -1 /tmp/f.csv | grep -q HomeTeam; then
+                mv /tmp/f.csv "data/$S/$L.csv"; echo "OK $S/$L"
+              else
+                echo "ATLA $S/$L"
+              fi
+            done
+          done
+          if curl -sfL --max-time 60 -o /tmp/fx.csv "https://www.football-data.co.uk/fixtures.csv" && head -1 /tmp/fx.csv | grep -q HomeTeam; then
+            mv /tmp/fx.csv data/fixtures.csv; echo "OK fixtures"
+          fi
+      - name: Kaydet
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data
+          git diff --cached --quiet || (git commit -m "veri guncellendi $(date -u +%F\ %H:%M)" && git push)
