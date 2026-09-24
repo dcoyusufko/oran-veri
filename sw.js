@@ -1,5 +1,5 @@
 // Oran Analizi: uygulama dosyalarını çevrimdışı açılabilsin diye saklar (önce internet, yoksa kayıtlı kopya).
-const SHELL = 'oran-app-v1';
+const SHELL = 'oran-app-v2';
 const FILES = ['./', 'index.html', 'app.js', 'engine.js', 'manifest.json', 'icon-192.png', 'icon-512.png', 'apple-touch-icon.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(SHELL).then(c => c.addAll(FILES)).then(() => self.skipWaiting())); });
 self.addEventListener('activate', e => { e.waitUntil(self.clients.claim()); });

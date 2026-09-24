@@ -21,7 +21,9 @@
   };
   const MKEYS = Object.keys(METHODS);
 
-  const LEAGUES = { T1: 'Süper Lig', E0: 'Premier Lig', D1: 'Bundesliga', SP1: 'La Liga', I1: 'Serie A' };
+  const FD_LEAGUES = { T1: 'Süper Lig', E0: 'Premier Lig', D1: 'Bundesliga', SP1: 'La Liga', I1: 'Serie A' };
+  const CUPS = { CL: 'Şampiyonlar Ligi', EL: 'Avrupa Ligi', ECL: 'Konferans Ligi', MILLI: 'Milli Maçlar' };
+  const LEAGUES = Object.assign({}, FD_LEAGUES, CUPS);
 
   // ---------- yardımcılar ----------
   function devig(odds) {
@@ -415,6 +417,6 @@
     return { picks, requested: count, prob, odds, ev: prob * odds - 1 };
   }
 
-  const api = { GROUPS, GKEYS, OUTCOMES, METHODS, MKEYS, LEAGUES, ODDS_BANDS, devig, parseCsv, played, result, avgOdds, scoreProbs, run, ranked, buildCoupon, bandOf };
+  const api = { GROUPS, GKEYS, OUTCOMES, METHODS, MKEYS, LEAGUES, FD_LEAGUES, CUPS, ODDS_BANDS, devig, parseCsv, played, result, avgOdds, scoreProbs, run, ranked, buildCoupon, bandOf };
   if (typeof module !== 'undefined' && module.exports) module.exports = api; else root.Engine = api;
 })(typeof self !== 'undefined' ? self : this);

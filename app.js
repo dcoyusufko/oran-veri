@@ -4,7 +4,9 @@
   const E = window.Engine;
   const DEFAULT_BASE = 'https://raw.githubusercontent.com/dcoyusufko/oran-veri/main/data';
   const FALLBACK_BASE = 'https://raw.githubusercontent.com/Char2mant/futbol-veri-aynasi/main/data/fd';
-  const LG_KEYS = Object.keys(E.LEAGUES);
+  const LG_KEYS = Object.keys(E.LEAGUES);          // tümü (ayrıştırma ve görüntüleme)
+  const FD_KEYS = Object.keys(E.FD_LEAGUES);       // football-data ligleri
+  const CUP_KEYS = Object.keys(E.CUPS);            // kupa ve milli maçlar (data/kupa)
   const $ = s => document.querySelector(s);
 
   // ---------- küçük depolama yardımcıları ----------
@@ -103,15 +105,17 @@
     const msgs = [];
     let fail = 0, done = 0;
     const jobs = [];
-    ss.forEach((s, si) => LG_KEYS.forEach(lg => jobs.push({ key: `sezon/${s}/${lg}`, s, lg, fresh: force || si >= ss.length - 2 })));
-    const total = jobs.length + 1;
+    ss.forEach((s, si) => FD_KEYS.forEach(lg => jobs.push({ key: `sezon/${s}/${lg}`, s, lg, fresh: force || si >= ss.length - 2 })));
+    ss.forEach((s, si) => CUP_KEYS.forEach(lg => jobs.push({ key: `kupa/${s}/${lg}`, s, lg, cup: true, fresh: force || si >= ss.length - 2 })));
+    const total = jobs.length + 2;
     const step = () => { done++; setProgress(`Veriler indiriliyor… ${done}/${total}`); };
     const texts = await Promise.all(jobs.map(async j => {
       let t = j.fresh ? null : await cacheGet(j.key);
       if (!t) {
-        t = await download(`${settings.base}/${j.s}/${j.lg}.csv`) || await download(`${FALLBACK_BASE}/${j.s}/${j.lg}.csv`);
+        t = j.cup ? await download(`${settings.base}/kupa/${j.s}/${j.lg}.csv`)
+          : await download(`${settings.base}/${j.s}/${j.lg}.csv`) || await download(`${FALLBACK_BASE}/${j.s}/${j.lg}.csv`);
         if (t) await cachePut(j.key, t); else t = await cacheGet(j.key);
-        if (!t) fail++;
+        if (!t && !j.cup) fail++;  // kupa dosyası olmaması normal (henüz maç oynanmamış olabilir)
       }
       step();
       return t;
@@ -120,8 +124,11 @@
     if (fx) await cachePut('fixtures', fx);
     else { fx = await cacheGet('fixtures'); msgs.push('Gelecek maç listesi indirilemedi' + (fx ? ', son kayıtlı liste kullanılıyor.' : '. İnternet bağlantını ya da Ayarlar\'daki adresi kontrol et.')); }
     step();
+    let cupFx = await download(`${settings.base}/kupa/aktif.csv`);
+    if (cupFx) await cachePut('kupa-aktif', cupFx); else cupFx = await cacheGet('kupa-aktif');
+    step();
     if (fail) msgs.push(`${fail} sezon dosyası indirilemedi.`);
-    return { texts: texts.filter(Boolean), fx, msgs };
+    return { texts: texts.filter(Boolean), fx, cupFx, msgs };
   }
 
   function updateSnaps(upcoming) {
@@ -141,7 +148,7 @@
     if (state.busy) return;
     state.busy = true; setProgress('Veriler indiriliyor…');
     try {
-      const { texts, fx, msgs } = await loadTexts(force);
+      const { texts, fx, cupFx, msgs } = await loadTexts(force);
       setProgress('Analiz ediliyor…');
       await new Promise(r => setTimeout(r, 30));
       const hist = new Map();
@@ -149,7 +156,8 @@
       const histArr = [...hist.values()];
       const playedPairs = new Set(histArr.filter(E.played).map(m => `${m.lg}|${m.home}|${m.away}|${m.date}`));
       const t = todayNum();
-      const fromFx = fx ? E.parseCsv(fx, LG_KEYS).filter(m => !E.played(m) && m.day >= t - 1 && !playedPairs.has(`${m.lg}|${m.home}|${m.away}|${m.date}`)) : [];
+      const fxRows = [...(fx ? E.parseCsv(fx, LG_KEYS) : []), ...(cupFx ? E.parseCsv(cupFx, LG_KEYS) : [])];
+      const fromFx = fxRows.filter(m => !E.played(m) && m.day >= t - 1 && !playedPairs.has(`${m.lg}|${m.home}|${m.away}|${m.date}`));
       const fromHist = histArr.filter(m => !E.played(m) && m.day >= t - 1);
       const upMap = new Map(); [...fromFx, ...fromHist].forEach(m => upMap.set(m.key, m));
       const upcoming = [...upMap.values()];
@@ -369,6 +377,7 @@
     $('#tabs').style.display = d ? 'none' : '';
     document.querySelectorAll('#tabs button').forEach(b => b.classList.toggle('on', b.dataset.tab === state.tab));
     main.innerHTML = d ? viewDetail(d) : state.tab === 'bulten' ? viewBulten() : state.tab === 'kupon' ? viewKupon() : state.tab === 'analiz' ? viewAnaliz() : viewSonuc();
+    main.querySelectorAll('.chips').forEach(row => { const on = row.querySelector('.chip.on'); if (on) row.scrollLeft = Math.max(0, on.offsetLeft - (row.clientWidth - on.clientWidth) / 2); });
   }
 
   function openDetail(key) { state.detail = key; history.pushState({ d: key }, ''); render(); window.scrollTo(0, 0); }
