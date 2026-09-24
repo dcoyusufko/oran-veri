@@ -3,6 +3,7 @@ name: Veri aynasi
 # football-data.co.uk Turkiye'den erisime kapali. Bu is GitHub'in yurt disindaki
 # sunucusunda calisir, ucretsiz yayinlanan CSV dosyalarini indirip bu depoya kaydeder.
 # Oran Analizi uygulamasi dosyalari raw.githubusercontent.com uzerinden okur.
+# Kupa ve milli mac oranlari The Odds API'den alinir (ODDS_API_KEY gizli ayari gerekir).
 
 on:
   schedule:
@@ -39,6 +40,216 @@ jobs:
           if curl -sfL --max-time 60 -o /tmp/fx.csv "https://www.football-data.co.uk/fixtures.csv" && head -1 /tmp/fx.csv | grep -q HomeTeam; then
             mv /tmp/fx.csv data/fixtures.csv; echo "OK fixtures"
           fi
+      - name: Kupa ve milli mac oranlari
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: |
+          python3 - <<'PYEOF'
+          """Kupa ve milli maç oranlarını The Odds API'den alıp football-data biçiminde CSV'ye yazar.
+
+          data/kupa/aktif.csv            : sonucu henüz belli olmayan maçlar (bülten)
+          data/kupa/<sezon>/<LIG>.csv    : sonuçlanmış maçlar (geçmiş)
+          LIG: CL (Şampiyonlar Ligi), EL (Avrupa Ligi), ECL (Konferans Ligi), MILLI (milli maçlar)
+          Ücretsiz plan kotasını korumak için yalnızca yaklaşan maçı olan turnuvalar sorgulanır.
+          """
+          import csv, json, os, sys, urllib.request, urllib.parse
+          from datetime import datetime, timedelta, timezone
+          from zoneinfo import ZoneInfo
+
+          KEY = os.environ.get('ODDS_API_KEY', '').strip()
+          API = os.environ.get('ODDS_API_URL', 'https://api.the-odds-api.com/v4')
+          ROOT = os.environ.get('KUPA_DIR', 'data/kupa')
+          NOW = datetime.fromisoformat(os.environ['KUPA_NOW']) if os.environ.get('KUPA_NOW') else datetime.now(timezone.utc)
+          LON = ZoneInfo('Europe/London')
+          ODDS_DAYS = 3          # bu kadar gün içindeki maçların oranı alınır
+          COLS = ['Div', 'Date', 'Time', 'HomeTeam', 'AwayTeam', 'FTHG', 'FTAG',
+                  'AvgH', 'AvgD', 'AvgA', 'Avg>2.5', 'Avg<2.5', 'MaxH', 'MaxD', 'MaxA', 'Max>2.5', 'Max<2.5',
+                  'PSH', 'PSD', 'PSA', 'P>2.5', 'P<2.5', 'Kickoff', 'EventId', 'Sport']
+          remaining = None
+
+
+          def div_of(sport):
+              k = sport['key']
+              if 'women' in k or sport.get('has_outrights') or k.endswith('_winner'):
+                  return None
+              if k.startswith('soccer_uefa_champs_league'):
+                  return 'CL'
+              if k == 'soccer_uefa_europa_league':
+                  return 'EL'
+              if k == 'soccer_uefa_europa_conference_league':
+                  return 'ECL'
+              milli = ('soccer_fifa_world_cup', 'soccer_uefa_nations_league', 'soccer_uefa_euro_qualification',
+                       'soccer_uefa_european_championship', 'soccer_international_friendlies', 'soccer_fifa_world_cup_qualifiers')
+              if k.startswith(milli):
+                  return 'MILLI'
+              return None
+
+
+          def get(path, **params):
+              global remaining
+              params['apiKey'] = KEY
+              url = f'{API}{path}?{urllib.parse.urlencode(params)}'
+              req = urllib.request.Request(url, headers={'User-Agent': 'oran-veri'})
+              with urllib.request.urlopen(req, timeout=40) as r:
+                  rem = r.headers.get('x-requests-remaining')
+                  if rem is not None:
+                      try:
+                          remaining = float(rem)
+                      except ValueError:
+                          pass
+                  return json.loads(r.read().decode('utf-8'))
+
+
+          def iso(t):
+              return datetime.fromisoformat(t.replace('Z', '+00:00'))
+
+
+          def season_of(dt):
+              y = dt.year if dt.month >= 7 else dt.year - 1
+              return f'{y % 100:02d}{(y + 1) % 100:02d}'
+
+
+          def read(path):
+              if not os.path.exists(path):
+                  return []
+              with open(path, encoding='utf-8') as f:
+                  return list(csv.DictReader(f))
+
+
+          def write(path, rows):
+              os.makedirs(os.path.dirname(path), exist_ok=True)
+              with open(path, 'w', encoding='utf-8', newline='') as f:
+                  w = csv.DictWriter(f, fieldnames=COLS, extrasaction='ignore')
+                  w.writeheader()
+                  for r in sorted(rows, key=lambda r: (r.get('Kickoff', ''), r.get('HomeTeam', ''))):
+                      w.writerow(r)
+
+
+          def fmt(x):
+              return f'{x:.2f}' if x else ''
+
+
+          def odds_row(ev, div, sport):
+              """Bir maçın tüm bahis şirketlerinden ortalama/en yüksek/keskin oranlarını çıkarır."""
+              home, away = ev['home_team'], ev['away_team']
+              h2h, ou = [], []
+              sharp_h2h = sharp_ou = None
+              rank_h2h = rank_ou = 99
+              sharp_rank = {'pinnacle': 0, 'betfair_ex_eu': 1, 'betfair_ex_uk': 2, 'matchbook': 3}
+              for bm in ev.get('bookmakers', []):
+                  rank = sharp_rank.get(bm.get('key'), 99)
+                  for mk in bm.get('markets', []):
+                      oc = mk.get('outcomes', [])
+                      if mk.get('key') == 'h2h':
+                          d = {}
+                          for o in oc:
+                              n = o.get('name', '')
+                              if n == home:
+                                  d['H'] = o.get('price')
+                              elif n == away:
+                                  d['A'] = o.get('price')
+                              elif n.lower() in ('draw', 'tie', 'x'):
+                                  d['D'] = o.get('price')
+                          if all((d.get(k) or 0) > 1 for k in 'HDA'):
+                              v = (d['H'], d['D'], d['A'])
+                              h2h.append(v)
+                              if rank < rank_h2h:
+                                  rank_h2h, sharp_h2h = rank, v
+                      elif mk.get('key') == 'totals':
+                          d = {}
+                          for o in oc:
+                              if abs(float(o.get('point') or 0) - 2.5) < 1e-9:
+                                  d[o.get('name', '').lower()] = o.get('price')
+                          if (d.get('over') or 0) > 1 and (d.get('under') or 0) > 1:
+                              v = (d['over'], d['under'])
+                              ou.append(v)
+                              if rank < rank_ou:
+                                  rank_ou, sharp_ou = rank, v
+              kick = iso(ev['commence_time'])
+              loc = kick.astimezone(LON)
+              r = {'Div': div, 'Date': loc.strftime('%d/%m/%Y'), 'Time': loc.strftime('%H:%M'),
+                   'HomeTeam': home, 'AwayTeam': away, 'Kickoff': kick.strftime('%Y-%m-%dT%H:%M:%SZ'),
+                   'EventId': ev['id'], 'Sport': sport}
+              if h2h:
+                  for i, c in enumerate('HDA'):
+                      r[f'Avg{c}'] = fmt(sum(v[i] for v in h2h) / len(h2h))
+                      r[f'Max{c}'] = fmt(max(v[i] for v in h2h))
+              if ou:
+                  r['Avg>2.5'] = fmt(sum(v[0] for v in ou) / len(ou)); r['Avg<2.5'] = fmt(sum(v[1] for v in ou) / len(ou))
+                  r['Max>2.5'] = fmt(max(v[0] for v in ou)); r['Max<2.5'] = fmt(max(v[1] for v in ou))
+              if sharp_h2h:
+                  r['PSH'], r['PSD'], r['PSA'] = (fmt(x) for x in sharp_h2h)
+              if sharp_ou:
+                  r['P>2.5'], r['P<2.5'] = (fmt(x) for x in sharp_ou)
+              return r
+
+
+          def main():
+              if not KEY:
+                  print('ODDS_API_KEY yok, kupa verisi atlandı.')
+                  return
+              aktif_path = os.path.join(ROOT, 'aktif.csv')
+              aktif = {r['EventId']: r for r in read(aktif_path)}
+              sports = get('/sports')
+              chosen = [(s['key'], div_of(s)) for s in sports if s.get('group', '').lower() == 'soccer' or s['key'].startswith('soccer_')]
+              chosen = [(k, d) for k, d in chosen if d]
+              print('Turnuvalar:', ', '.join(k for k, _ in chosen) or '-', '| kalan kota:', remaining)
+              finished = []
+              for key, div in chosen:
+                  # 1) yaklaşan maçlar (kota harcamaz)
+                  events = get(f'/sports/{key}/events')
+                  soon = [e for e in events if NOW < iso(e['commence_time']) < NOW + timedelta(days=ODDS_DAYS)]
+                  # 2) oranlar (2 kota) — sadece yaklaşan maç varsa
+                  if soon and (remaining is None or remaining > 12):
+                      data = get(f'/sports/{key}/odds', regions='eu', markets='h2h,totals', oddsFormat='decimal',
+                                 commenceTimeFrom=NOW.strftime('%Y-%m-%dT%H:%M:%SZ'),
+                                 commenceTimeTo=(NOW + timedelta(days=ODDS_DAYS)).strftime('%Y-%m-%dT%H:%M:%SZ'))
+                      for ev in data:
+                          row = odds_row(ev, div, key)
+                          old = aktif.get(ev['id'])
+                          if old and not row.get('AvgH'):
+                              continue  # yeni oran gelmediyse eskisini koru
+                          aktif[ev['id']] = {**(old or {}), **row}
+                      print(f'{key}: {len(soon)} yaklaşan maç, {len(data)} oran | kalan kota: {remaining}')
+                  # 3) sonuçlar (2 kota) — sadece başlamış ve sonucu bekleyen maç varsa
+                  pending = [r for r in aktif.values() if r.get('Sport') == key and iso(r['Kickoff']) < NOW - timedelta(hours=2)]
+                  if pending and (remaining is None or remaining > 4):
+                      scores = {s['id']: s for s in get(f'/sports/{key}/scores', daysFrom=3)}
+                      for r in pending:
+                          s = scores.get(r['EventId'])
+                          if s and s.get('completed') and s.get('scores'):
+                              sc = {x['name']: x['score'] for x in s['scores']}
+                              try:
+                                  r['FTHG'], r['FTAG'] = str(int(sc[r['HomeTeam']])), str(int(sc[r['AwayTeam']]))
+                              except (KeyError, ValueError, TypeError):
+                                  continue
+                              finished.append(r)
+                      print(f'{key}: {len(pending)} maçın sonucu bekleniyor, {sum(1 for r in finished if r.get("Sport") == key)} sonuç geldi')
+              # sonuçlananları sezon dosyasına taşı
+              by_file = {}
+              for r in finished:
+                  aktif.pop(r['EventId'], None)
+                  by_file.setdefault(os.path.join(ROOT, season_of(iso(r['Kickoff'])), r['Div'] + '.csv'), []).append(r)
+              for path, rows in by_file.items():
+                  old = {r['EventId']: r for r in read(path)}
+                  for r in rows:
+                      old[r['EventId']] = r
+                  write(path, list(old.values()))
+              # 4 günden eski ve sonucu gelmemiş maçları bırak
+              for k in [k for k, r in aktif.items() if iso(r['Kickoff']) < NOW - timedelta(days=4)]:
+                  aktif.pop(k)
+              write(aktif_path, list(aktif.values()))
+              print(f'Bültende {len(aktif)} kupa/milli maç, {len(finished)} yeni sonuç. Kalan kota: {remaining}')
+
+
+          if __name__ == '__main__':
+              try:
+                  main()
+              except Exception as e:  # kupa verisi alınamasa da lig verisi güncellenmeye devam etsin
+                  print('Kupa verisi alınamadı:', repr(e))
+                  sys.exit(0)
+
+          PYEOF
       - name: Kaydet
         run: |
           git config user.name "github-actions[bot]"
