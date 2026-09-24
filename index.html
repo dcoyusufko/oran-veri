@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Oran Analizi</title>
+<meta name="theme-color" content="#1B7F4B">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Oran Analizi">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-192.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<style>
+:root {
+  --bg: #F4F6F4; --surface: #FFFFFF; --surface2: #E8EEEA; --text: #16201A; --muted: #5E6A63;
+  --primary: #1B7F4B; --primary-soft: #DCEFE3; --line: #D9E1DC;
+  --green: #1B7F4B; --green2: #4F8A3C; --amber: #B7791F; --grey: #8A8F98; --red: #C0392B;
+  --nav: #FFFFFF;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101412; --surface: #171C19; --surface2: #232A26; --text: #E7EDE9; --muted: #9AA7A0;
+    --primary: #6FD39C; --primary-soft: #1D3528; --line: #2A332E;
+    --green: #6FD39C; --green2: #93C47D; --amber: #E0B25A; --grey: #8F979E; --red: #F07B6E;
+    --nav: #151A17;
+  }
+}
+[hidden] { display: none !important; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; background: var(--bg); color: var(--text); }
+body { font: 15px/1.4 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
+button { font: inherit; color: inherit; }
+header {
+  position: sticky; top: 0; z-index: 10; background: var(--bg);
+  padding: calc(env(safe-area-inset-top) + 10px) 16px 8px; display: flex; align-items: center; gap: 8px;
+}
+header h1 { font-size: 21px; font-weight: 650; margin: 0; flex: 1; }
+header .sub { font-size: 11px; color: var(--muted); font-weight: 400; display: block; }
+.iconbtn { background: none; border: 0; padding: 8px; border-radius: 50%; cursor: pointer; display: grid; place-items: center; }
+.iconbtn:active { background: var(--surface2); }
+.iconbtn svg { width: 24px; height: 24px; fill: currentColor; }
+.progress { height: 3px; background: var(--primary-soft); overflow: hidden; position: sticky; top: 0; }
+.progress::after { content: ""; display: block; height: 100%; width: 35%; background: var(--primary); animation: slide 1.1s infinite ease-in-out; }
+@keyframes slide { from { transform: translateX(-100%); } to { transform: translateX(300%); } }
+main { padding-bottom: calc(80px + env(safe-area-inset-bottom)); max-width: 720px; margin: 0 auto; }
+nav.tabs {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 10; background: var(--nav);
+  border-top: 1px solid var(--line); display: flex; padding-bottom: env(safe-area-inset-bottom);
+}
+nav.tabs button { flex: 1; background: none; border: 0; padding: 8px 0 7px; display: flex; flex-direction: column; align-items: center; gap: 2px; font-size: 12px; color: var(--muted); cursor: pointer; }
+nav.tabs button svg { width: 24px; height: 24px; fill: currentColor; padding: 2px 16px; border-radius: 14px; box-sizing: content-box; }
+nav.tabs button.on { color: var(--text); font-weight: 600; }
+nav.tabs button.on svg { background: var(--primary-soft); }
+.chips { display: flex; gap: 6px; overflow-x: auto; padding: 4px 12px 6px; scrollbar-width: none; }
+.chips::-webkit-scrollbar { display: none; }
+.chip { flex: none; border: 1px solid var(--line); background: var(--surface); border-radius: 9px; padding: 6px 12px; font-size: 14px; cursor: pointer; }
+.chip.on { background: var(--primary-soft); border-color: transparent; font-weight: 600; }
+.card { background: var(--surface); border-radius: 14px; margin: 6px 12px; padding: 14px; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
+.card h2 { font-size: 16px; margin: 0 0 8px; font-weight: 650; }
+.card.tap { cursor: pointer; }
+.card.tap:active { background: var(--surface2); }
+.day { color: var(--primary); font-weight: 650; font-size: 14px; margin: 14px 16px 2px; }
+.meta { font-size: 11.5px; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; }
+.teams { font-weight: 650; font-size: 15.5px; margin: 3px 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.odds { font-size: 12.5px; color: var(--muted); }
+.pchips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 8px; }
+.pchip { border-radius: 8px; padding: 3px 8px; font-size: 12.5px; font-weight: 650; }
+.note { font-size: 12.5px; color: var(--muted); line-height: 1.4; margin: 4px 0; }
+.warn { color: var(--amber); }
+.value { font-size: 11.5px; color: var(--green); margin-top: 6px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th { font-size: 11px; color: var(--muted); font-weight: 500; text-align: right; padding: 4px 2px; border-bottom: 1px solid var(--line); }
+td { text-align: right; padding: 6px 2px; }
+th:first-child, td:first-child { text-align: left; }
+tr.sep td { border-bottom: 1px solid var(--line); }
+td.b { font-weight: 650; }
+input.odd { width: 58px; text-align: center; border: 0; border-radius: 6px; background: var(--surface2); color: var(--text); padding: 6px 2px; font: inherit; font-size: 16px; }
+.pos { color: var(--green); } .neg { color: var(--red); }
+.bar { height: 8px; background: var(--surface2); border-radius: 4px; flex: 1; overflow: hidden; }
+.bar i { display: block; height: 100%; background: var(--primary); border-radius: 4px; }
+.wrow { display: flex; align-items: center; gap: 6px; }
+.row { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--line); }
+.row:last-child { border-bottom: 0; }
+.row .r { text-align: right; flex: none; }
+.small { font-size: 11.5px; color: var(--muted); }
+.stats3 { display: flex; justify-content: space-around; text-align: center; margin-top: 12px; }
+.stats3 b { display: block; font-size: 19px; color: var(--primary); }
+.seg { display: flex; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; margin-top: 8px; }
+.seg button { flex: 1; background: none; border: 0; padding: 9px 4px; font-size: 13.5px; cursor: pointer; }
+.seg button.on { background: var(--primary-soft); font-weight: 650; }
+input[type=range] { width: 100%; accent-color: var(--primary); margin: 4px 0 10px; }
+label.f { display: block; font-size: 13px; margin-top: 10px; }
+label.f input[type=text], label.f input[type=url] { width: 100%; padding: 9px; border-radius: 8px; border: 1px solid var(--line); background: var(--surface); color: var(--text); font-size: 16px; margin-top: 4px; }
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,.45); z-index: 30; display: flex; align-items: flex-end; justify-content: center; }
+.sheet { background: var(--surface); width: 100%; max-width: 560px; max-height: 88vh; overflow: auto; border-radius: 18px 18px 0 0; padding: 18px 18px calc(18px + env(safe-area-inset-bottom)); }
+.sheet h2 { margin: 0 0 6px; font-size: 19px; }
+.btns { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+.btn { border: 0; border-radius: 20px; padding: 9px 18px; cursor: pointer; background: var(--surface2); }
+.btn.p { background: var(--primary); color: #fff; }
+@media (prefers-color-scheme: dark) { .btn.p { color: #0B1A12; } }
+.empty { text-align: center; padding: 30px 20px; color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <button class="iconbtn" id="back" hidden aria-label="Geri"><svg viewBox="0 0 24 24"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20z"/></svg></button>
+  <h1 id="title">Oran Analizi<span class="sub" id="sub"></span></h1>
+  <button class="iconbtn" id="refresh" aria-label="Yenile"><svg viewBox="0 0 24 24"><path d="M17.65 6.35A7.96 7.96 0 0 0 12 4a8 8 0 1 0 7.73 10h-2.08A6 6 0 1 1 12 6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"/></svg></button>
+  <button class="iconbtn" id="settings" aria-label="Ayarlar"><svg viewBox="0 0 24 24"><path d="M19.14 12.94c.04-.3.06-.61.06-.94s-.02-.64-.07-.94l2.03-1.58a.49.49 0 0 0 .12-.61l-1.92-3.32a.49.49 0 0 0-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54a.48.48 0 0 0-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96a.48.48 0 0 0-.59.22L2.74 8.87a.47.47 0 0 0 .12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58a.49.49 0 0 0-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32a.47.47 0 0 0-.12-.61l-2.01-1.58zM12 15.6A3.6 3.6 0 1 1 12 8.4a3.6 3.6 0 0 1 0 7.2z"/></svg></button>
+</header>
+<div class="progress" id="progress" hidden></div>
+<main id="main"><div class="empty">Yükleniyor…</div></main>
+<nav class="tabs" id="tabs">
+  <button data-tab="bulten" class="on"><svg viewBox="0 0 24 24"><path d="M3 13h2v-2H3v2zm0 4h2v-2H3v2zm0-8h2V7H3v2zm4 4h14v-2H7v2zm0 4h14v-2H7v2zM7 7v2h14V7H7z"/></svg>Bülten</button>
+  <button data-tab="kupon"><svg viewBox="0 0 24 24"><path d="M12 17.27 18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>Kupon</button>
+  <button data-tab="analiz"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>Analiz</button>
+  <button data-tab="sonuc"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V9h14v11zM7 11h5v5H7z"/></svg>Sonuçlar</button>
+</nav>
+<div id="modal"></div>
+<script src="engine.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
