@@ -1,0 +1,8 @@
+Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,AvgH,AvgD,AvgA,Avg>2.5,Avg<2.5,MaxH,MaxD,MaxA,Max>2.5,Max<2.5,PSH,PSD,PSA,P>2.5,P<2.5,Kickoff,EventId,Sport
+MILLI,24/09/2026,19:45,Austria,Israel,3,1,1.46,4.64,6.26,1.54,2.39,1.50,4.90,7.40,1.55,2.40,1.50,4.90,7.40,,,2026-09-24T18:45:00Z,4f880a226d6ab27f137ec39da877e68c,soccer_uefa_nations_league
+MILLI,24/09/2026,19:45,Kosovo,Republic of Ireland,1,0,2.39,3.07,3.13,2.29,1.56,2.48,3.30,3.40,2.48,1.59,2.48,3.30,3.40,,,2026-09-24T18:45:00Z,153ad245de40be77011a5ffff62e0302,soccer_uefa_nations_league
+MILLI,24/09/2026,19:45,Liechtenstein,Lithuania,0,2,13.80,4.81,1.28,2.39,1.55,19.50,5.41,1.32,2.43,1.61,19.50,5.10,1.32,,,2026-09-24T18:45:00Z,7eba39bc18096e656826ebb2792e95ab,soccer_uefa_nations_league
+MILLI,24/09/2026,19:45,Netherlands,Germany,1,1,2.67,3.73,2.42,1.44,2.69,2.82,3.95,2.52,1.44,2.72,2.74,3.79,2.47,,,2026-09-24T18:45:00Z,1b126f4039aa0e37f54d3142212702b7,soccer_uefa_nations_league
+MILLI,24/09/2026,19:45,Norway,Denmark,3,2,1.59,4.33,5.04,1.50,2.48,1.64,4.60,5.60,1.50,2.52,1.62,4.33,5.28,,,2026-09-24T18:45:00Z,9352e6dce53be8e98217c70a28200e69,soccer_uefa_nations_league
+MILLI,24/09/2026,19:45,Portugal,Wales,1,0,1.15,8.01,16.97,1.31,3.32,1.18,9.40,21.00,1.32,3.35,1.16,8.07,18.44,,,2026-09-24T18:45:00Z,4ab9287a169d5efd8818d7487d6e0f03,soccer_uefa_nations_league
+MILLI,24/09/2026,19:45,Serbia,Greece,1,2,2.87,3.24,2.48,2.09,1.68,3.05,3.40,2.60,2.19,1.74,2.94,3.35,2.53,,,2026-09-24T18:45:00Z,8f5c39e163f06383d2c06d0b7769963f,soccer_uefa_nations_league
