@@ -1,31 +1,27 @@
 Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,AvgH,AvgD,AvgA,Avg>2.5,Avg<2.5,MaxH,MaxD,MaxA,Max>2.5,Max<2.5,PSH,PSD,PSA,P>2.5,P<2.5,Kickoff,EventId,Sport
-MILLI,01/10/2026,19:45,Denmark,Portugal,,,3.50,3.64,2.01,1.65,2.17,3.70,3.85,2.10,1.74,2.22,3.58,3.72,2.06,,,2026-10-01T18:45:00Z,d4cee9aa708870095e23599afb35bce0,soccer_uefa_nations_league
-MILLI,01/10/2026,19:45,Germany,Serbia,,,1.19,7.13,13.32,1.32,3.27,1.23,8.00,15.50,1.33,3.35,1.21,7.10,13.55,,,2026-10-01T18:45:00Z,546150d4747a3a5108c7e9860426bf36,soccer_uefa_nations_league
-MILLI,01/10/2026,19:45,Greece,Netherlands,,,3.46,3.57,2.04,1.64,2.18,3.65,3.80,2.16,1.71,2.25,3.62,3.65,2.07,1.84,2.16,2026-10-01T18:45:00Z,6321b7d465a21274f0da7a5e50dbf5ef,soccer_uefa_nations_league
-MILLI,01/10/2026,19:45,Israel,Kosovo,,,3.03,3.30,2.31,1.87,1.86,3.20,3.50,2.46,1.94,1.94,3.20,3.50,2.46,,,2026-10-01T18:45:00Z,adc5517ae91bb43f3406d577b489abc0,soccer_uefa_nations_league
-MILLI,01/10/2026,19:45,Malta,Gibraltar,,,1.26,5.06,12.28,2.03,1.72,1.30,5.60,16.50,2.12,1.79,1.30,5.60,16.50,,,2026-10-01T18:45:00Z,a2b54d223ce491ac52af34a462de0140,soccer_uefa_nations_league
-MILLI,01/10/2026,19:45,Republic of Ireland,Austria,,,3.51,3.21,2.13,2.15,1.65,3.75,3.35,2.28,2.25,1.71,3.75,3.30,2.28,,,2026-10-01T18:45:00Z,0db832b7346f766521d9e67cd5ab1687,soccer_uefa_nations_league
-MILLI,01/10/2026,19:45,Wales,Norway,,,6.53,4.82,1.44,1.48,2.51,7.40,5.20,1.48,1.50,2.52,6.53,4.97,1.46,1.63,2.46,2026-10-01T18:45:00Z,16d310e835713f3457023deb98fb9f74,soccer_uefa_nations_league
-MILLI,02/10/2026,15:00,Kazakhstan,Moldova,,,1.82,3.41,4.45,2.08,1.69,1.92,3.60,4.80,2.18,1.75,1.92,3.60,4.80,,,2026-10-02T14:00:00Z,7db202b104fa0b2c3efc16c9ab45dc1e,soccer_uefa_nations_league
-MILLI,02/10/2026,17:00,Cyprus,Armenia,,,2.27,3.25,3.10,2.03,1.72,2.42,3.40,3.31,2.17,1.75,2.42,3.40,3.20,,,2026-10-02T16:00:00Z,2752b34190caefe2813fa470ff2c01d4,soccer_uefa_nations_league
-MILLI,02/10/2026,17:00,Latvia,Montenegro,,,4.56,3.45,1.79,2.22,1.60,5.10,3.70,1.88,2.29,1.69,5.10,3.70,1.85,,,2026-10-02T16:00:00Z,32c438139763280b8efb86423e5b911e,soccer_uefa_nations_league
-MILLI,02/10/2026,19:45,Belgium,Turkey,,,1.51,4.69,5.51,1.42,2.77,1.56,5.00,6.00,1.43,2.80,1.52,4.87,5.69,,,2026-10-02T18:45:00Z,429e47b7c49fba99d5cbcba70b9c48c5,soccer_uefa_nations_league
-MILLI,02/10/2026,19:45,Bosnia & Herzegovina,Sweden,,,2.64,3.49,2.50,1.70,2.08,2.85,3.65,2.68,1.79,2.12,2.76,3.65,2.68,,,2026-10-02T18:45:00Z,b575f66a4bee31eb4f46cfbb2f3d7182,soccer_uefa_nations_league
-MILLI,02/10/2026,19:45,Faroe Islands,Slovakia,,,5.85,3.68,1.60,2.24,1.59,6.60,4.00,1.65,2.39,1.63,6.60,4.00,1.65,,,2026-10-02T18:45:00Z,a7769e85ee3c914abe40a277de800869,soccer_uefa_nations_league
-MILLI,02/10/2026,19:45,France,Italy,,,1.43,5.05,6.33,1.44,2.69,1.47,5.50,7.00,1.44,2.72,1.45,5.15,6.37,,,2026-10-02T18:45:00Z,e5ef3c5aba98aed80abcb9eb0d592bff,soccer_uefa_nations_league
-MILLI,02/10/2026,19:45,Hungary,Georgia,,,2.05,3.32,3.58,2.05,1.72,2.15,3.50,3.85,2.16,1.78,2.12,3.50,3.85,,,2026-10-02T18:45:00Z,aa65ea35f0aa1c0bb87cbcb9e5341b5b,soccer_uefa_nations_league
-MILLI,02/10/2026,19:45,Poland,Romania,,,1.54,4.13,5.72,1.74,2.02,1.60,4.40,6.40,1.83,2.07,1.60,4.40,6.40,,,2026-10-02T18:45:00Z,fdb1dbf27fe19575c7ce64fdfd4bcaa9,soccer_uefa_nations_league
-MILLI,02/10/2026,19:45,Ukraine,Northern Ireland,,,1.90,3.29,4.22,2.31,1.57,1.95,3.55,4.70,2.42,1.63,1.95,3.55,4.70,,,2026-10-02T18:45:00Z,4985fdd6c7e6801fcca1f9f1e78aed66,soccer_uefa_nations_league
-MILLI,03/10/2026,14:00,Finland,Albania,,,2.36,3.11,3.00,2.29,1.57,2.52,3.29,3.25,2.38,1.64,2.52,3.20,3.25,,,2026-10-03T13:00:00Z,1a1a08419af12933b4c6a72b729b5b59,soccer_uefa_nations_league
-MILLI,03/10/2026,17:00,Belarus,San Marino,,,1.09,9.49,22.77,1.39,2.83,1.12,13.00,30.00,1.40,2.85,1.10,13.00,30.00,,,2026-10-03T16:00:00Z,05615ea2e80df56ae5b887dec1ca2f52,soccer_uefa_nations_league
-MILLI,03/10/2026,17:00,Croatia,England,,,3.92,3.75,1.86,1.71,2.07,4.35,4.01,1.91,1.78,2.13,4.06,4.01,1.85,1.80,2.16,2026-10-03T16:00:00Z,ead81aac8131ba7e2f42e6989f4ba3c2,soccer_uefa_nations_league
-MILLI,03/10/2026,17:00,Estonia,Luxembourg,,,2.95,3.04,2.46,2.24,1.59,3.20,3.20,2.62,2.39,1.63,3.20,3.20,2.62,,,2026-10-03T16:00:00Z,0cfc30ef36263d5a16208197656b29ff,soccer_uefa_nations_league
-MILLI,03/10/2026,17:00,Iceland,Bulgaria,,,1.41,4.39,7.35,1.79,1.94,1.48,4.70,8.40,1.83,2.06,1.48,4.70,8.40,,,2026-10-03T16:00:00Z,a2b398e3cd93d7096008281dde9e6504,soccer_uefa_nations_league
-MILLI,03/10/2026,19:45,North Macedonia,Scotland,,,4.67,3.48,1.76,2.10,1.68,5.40,3.64,1.84,2.19,1.74,5.40,3.60,1.84,,,2026-10-03T18:45:00Z,1156265e39cc2b943da422a53d2a832a,soccer_uefa_nations_league
-MILLI,03/10/2026,19:45,Spain,Czech Republic,,,1.07,11.58,29.58,1.31,3.33,1.10,14.00,38.00,1.32,3.35,1.06,12.87,27.84,,,2026-10-03T18:45:00Z,a1b75fa94c18a201e6feec4cd04a2d56,soccer_uefa_nations_league
-MILLI,03/10/2026,19:45,Switzerland,Slovenia,,,1.33,4.77,9.24,1.84,1.89,1.37,5.40,11.00,1.96,1.93,1.36,5.40,11.00,,,2026-10-03T18:45:00Z,b6048b1da7816b2a0944013e6c139609,soccer_uefa_nations_league
-MILLI,04/10/2026,19:45,Greece,Germany,,,3.58,3.60,1.95,1.70,2.06,4.00,3.79,2.01,1.75,2.17,3.77,3.75,1.93,,,2026-10-04T18:45:00Z,4a0c0e7aa93708ae03af18db691f750f,soccer_uefa_nations_league
-MILLI,04/10/2026,19:45,Netherlands,Serbia,,,1.19,6.56,12.93,1.42,2.80,1.22,7.55,18.00,1.43,2.82,1.17,7.55,13.36,,,2026-10-04T18:45:00Z,8de611cbeea26af7bae8f076d9237fd4,soccer_uefa_nations_league
-MILLI,04/10/2026,19:45,Portugal,Norway,,,1.75,4.11,3.94,1.49,2.38,1.82,4.70,4.50,1.54,2.50,1.75,4.28,4.04,,,2026-10-04T18:45:00Z,a902c361d1a8c4fd596ffb93d71ab378,soccer_uefa_nations_league
-MILLI,04/10/2026,19:45,Republic of Ireland,Israel,,,1.89,3.48,3.85,1.96,1.77,1.99,3.70,4.20,2.03,1.86,1.99,3.70,4.20,,,2026-10-04T18:45:00Z,1dc55d09f236eff7e5bc8e754d23e144,soccer_uefa_nations_league
-MILLI,04/10/2026,19:45,Wales,Denmark,,,4.03,3.72,1.81,1.67,2.10,4.34,3.95,1.94,1.77,2.17,4.09,3.80,1.83,,,2026-10-04T18:45:00Z,18c29d24c37e4fa9c5c2a12218c87944,soccer_uefa_nations_league
+MILLI,02/10/2026,15:00,Kazakhstan,Moldova,,,1.88,3.21,4.54,2.42,1.54,1.96,3.40,5.00,2.48,1.59,1.96,3.40,5.00,,,2026-10-02T14:00:00Z,7db202b104fa0b2c3efc16c9ab45dc1e,soccer_uefa_nations_league
+MILLI,02/10/2026,17:00,Cyprus,Armenia,,,2.17,3.29,3.33,2.00,1.74,2.28,3.50,3.55,2.08,1.82,2.28,3.50,3.55,,,2026-10-02T16:00:00Z,2752b34190caefe2813fa470ff2c01d4,soccer_uefa_nations_league
+MILLI,02/10/2026,17:00,Latvia,Montenegro,,,4.84,3.61,1.72,2.05,1.71,5.20,3.80,1.81,2.17,1.75,5.20,3.80,1.81,,,2026-10-02T16:00:00Z,32c438139763280b8efb86423e5b911e,soccer_uefa_nations_league
+MILLI,02/10/2026,19:45,Belgium,Turkey,,,1.56,4.48,5.32,1.43,2.67,1.61,4.80,5.80,1.44,2.75,1.56,4.64,5.60,,,2026-10-02T18:45:00Z,429e47b7c49fba99d5cbcba70b9c48c5,soccer_uefa_nations_league
+MILLI,02/10/2026,19:45,Bosnia & Herzegovina,Sweden,,,2.74,3.56,2.41,1.63,2.19,2.90,3.75,2.54,1.68,2.30,2.90,3.75,2.54,,,2026-10-02T18:45:00Z,b575f66a4bee31eb4f46cfbb2f3d7182,soccer_uefa_nations_league
+MILLI,02/10/2026,19:45,Faroe Islands,Slovakia,,,6.41,3.91,1.53,2.06,1.70,7.20,4.20,1.58,2.14,1.80,7.20,4.20,1.58,,,2026-10-02T18:45:00Z,a7769e85ee3c914abe40a277de800869,soccer_uefa_nations_league
+MILLI,02/10/2026,19:45,France,Italy,,,1.46,4.83,6.40,1.48,2.49,1.51,5.20,7.20,1.50,2.55,1.46,5.03,6.51,,,2026-10-02T18:45:00Z,e5ef3c5aba98aed80abcb9eb0d592bff,soccer_uefa_nations_league
+MILLI,02/10/2026,19:45,Hungary,Georgia,,,2.20,3.23,3.37,2.13,1.66,2.34,3.36,3.60,2.27,1.70,2.34,3.35,3.60,,,2026-10-02T18:45:00Z,aa65ea35f0aa1c0bb87cbcb9e5341b5b,soccer_uefa_nations_league
+MILLI,02/10/2026,19:45,Poland,Romania,,,1.61,4.20,4.95,1.56,2.32,1.66,4.50,5.50,1.62,2.41,1.66,4.50,5.50,,,2026-10-02T18:45:00Z,fdb1dbf27fe19575c7ce64fdfd4bcaa9,soccer_uefa_nations_league
+MILLI,02/10/2026,19:45,Ukraine,Northern Ireland,,,1.99,3.11,4.20,2.56,1.46,2.08,3.25,4.60,2.68,1.49,2.08,3.25,4.60,,,2026-10-02T18:45:00Z,4985fdd6c7e6801fcca1f9f1e78aed66,soccer_uefa_nations_league
+MILLI,03/10/2026,14:00,Finland,Albania,,,2.36,3.13,3.02,2.28,1.57,2.48,3.30,3.35,2.38,1.64,2.48,3.20,3.35,,,2026-10-03T13:00:00Z,1a1a08419af12933b4c6a72b729b5b59,soccer_uefa_nations_league
+MILLI,03/10/2026,17:00,Belarus,San Marino,,,1.08,9.90,25.50,1.39,2.83,1.10,13.50,34.00,1.40,2.85,1.09,13.50,34.00,,,2026-10-03T16:00:00Z,05615ea2e80df56ae5b887dec1ca2f52,soccer_uefa_nations_league
+MILLI,03/10/2026,17:00,Croatia,England,,,4.00,3.85,1.82,1.65,2.16,4.40,4.10,1.88,1.71,2.24,4.07,4.03,1.85,1.80,2.16,2026-10-03T16:00:00Z,ead81aac8131ba7e2f42e6989f4ba3c2,soccer_uefa_nations_league
+MILLI,03/10/2026,17:00,Estonia,Luxembourg,,,2.95,3.05,2.47,2.28,1.56,3.20,3.20,2.62,2.39,1.63,3.20,3.20,2.62,,,2026-10-03T16:00:00Z,0cfc30ef36263d5a16208197656b29ff,soccer_uefa_nations_league
+MILLI,03/10/2026,17:00,Iceland,Bulgaria,,,1.41,4.40,7.38,1.78,1.95,1.48,4.80,8.40,1.83,2.06,1.48,4.80,8.40,,,2026-10-03T16:00:00Z,a2b398e3cd93d7096008281dde9e6504,soccer_uefa_nations_league
+MILLI,03/10/2026,19:45,North Macedonia,Scotland,,,4.75,3.50,1.75,2.09,1.69,5.50,3.70,1.81,2.19,1.74,5.50,3.70,1.80,,,2026-10-03T18:45:00Z,1156265e39cc2b943da422a53d2a832a,soccer_uefa_nations_league
+MILLI,03/10/2026,19:45,Spain,Czech Republic,,,1.07,11.74,31.40,1.31,3.30,1.09,15.50,42.00,1.32,3.35,1.07,12.67,27.85,,,2026-10-03T18:45:00Z,a1b75fa94c18a201e6feec4cd04a2d56,soccer_uefa_nations_league
+MILLI,03/10/2026,19:45,Switzerland,Slovenia,,,1.31,4.96,9.85,1.82,1.91,1.35,5.50,12.00,1.91,1.97,1.34,5.50,12.00,,,2026-10-03T18:45:00Z,b6048b1da7816b2a0944013e6c139609,soccer_uefa_nations_league
+MILLI,04/10/2026,14:00,Azerbaijan,Lithuania,,,2.23,3.05,3.26,2.50,1.44,2.33,3.28,3.51,2.50,1.44,,,,,,2026-10-04T13:00:00Z,af78df2c3dc0728fc53c675b62f18a98,soccer_uefa_nations_league
+MILLI,04/10/2026,17:00,Kosovo,Austria,,,3.37,3.46,2.07,1.79,1.96,3.60,3.72,2.18,1.85,2.04,3.45,3.60,2.18,,,2026-10-04T16:00:00Z,76c94aa8dba79a4f021b4eecbf422753,soccer_uefa_nations_league
+MILLI,04/10/2026,17:00,Malta,Andorra,,,1.67,3.20,5.82,2.52,1.44,1.74,3.40,6.70,2.60,1.48,,,,,,2026-10-04T16:00:00Z,048b8e582376b00f3acbaaf879ec05ec,soccer_uefa_nations_league
+MILLI,04/10/2026,19:45,Greece,Germany,,,3.77,3.77,1.89,1.68,2.10,4.10,4.00,1.94,1.75,2.18,3.91,3.93,1.91,,,2026-10-04T18:45:00Z,4a0c0e7aa93708ae03af18db691f750f,soccer_uefa_nations_league
+MILLI,04/10/2026,19:45,Netherlands,Serbia,,,1.17,7.41,14.60,1.38,2.93,1.20,8.40,18.00,1.39,2.95,1.16,7.89,14.18,,,2026-10-04T18:45:00Z,8de611cbeea26af7bae8f076d9237fd4,soccer_uefa_nations_league
+MILLI,04/10/2026,19:45,Portugal,Norway,,,1.63,4.41,4.58,1.44,2.62,1.68,4.80,5.10,1.44,2.62,1.64,4.65,4.69,,,2026-10-04T18:45:00Z,a902c361d1a8c4fd596ffb93d71ab378,soccer_uefa_nations_league
+MILLI,04/10/2026,19:45,Republic of Ireland,Israel,,,1.97,3.43,3.74,1.98,1.76,2.12,3.56,3.94,2.10,1.80,2.12,3.55,3.90,,,2026-10-04T18:45:00Z,1dc55d09f236eff7e5bc8e754d23e144,soccer_uefa_nations_league
+MILLI,04/10/2026,19:45,Wales,Denmark,,,3.79,3.71,1.90,1.72,2.08,4.09,3.90,2.02,1.82,2.20,3.92,3.80,1.93,1.82,2.20,2026-10-04T18:45:00Z,18c29d24c37e4fa9c5c2a12218c87944,soccer_uefa_nations_league
