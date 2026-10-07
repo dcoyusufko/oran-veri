@@ -1,10 +1,1 @@
 Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,AvgH,AvgD,AvgA,Avg>2.5,Avg<2.5,MaxH,MaxD,MaxA,Max>2.5,Max<2.5,PSH,PSD,PSA,P>2.5,P<2.5,Kickoff,EventId,Sport
-MILLI,06/10/2026,19:45,Albania,San Marino,,,1.02,20.50,51.22,1.17,4.75,1.03,34.00,80.00,1.17,4.75,1.03,34.00,80.00,,,2026-10-06T18:45:00Z,b482dc6936da27dfacadb83fdcaf898d,soccer_uefa_nations_league
-MILLI,06/10/2026,19:45,Belarus,Finland,,,4.05,3.20,1.98,2.44,1.52,4.50,3.35,2.08,2.65,1.57,4.50,3.30,2.08,,,2026-10-06T18:45:00Z,47bd936e6a94ddd84a6ad08926d0379b,soccer_uefa_nations_league
-MILLI,06/10/2026,19:45,Croatia,Spain,,,9.36,5.85,1.29,1.43,2.71,11.00,6.60,1.31,1.44,2.72,9.59,5.88,1.30,,,2026-10-06T18:45:00Z,5d9aac1a239e87ecc555aba2fe4426cf,soccer_uefa_nations_league
-MILLI,06/10/2026,19:45,England,Czech Republic,,,1.11,9.80,22.68,1.31,3.25,1.13,11.00,32.00,1.32,3.25,1.11,10.59,20.28,1.44,3.00,2026-10-06T18:45:00Z,8012c0d9c6c0b99e57d9465837c5ae94,soccer_uefa_nations_league
-MILLI,06/10/2026,19:45,Estonia,Iceland,,,5.60,3.95,1.57,1.85,1.89,6.40,4.20,1.65,1.94,2.00,6.40,4.20,1.65,,,2026-10-06T18:45:00Z,2718bb0aea7bb7aa60419612ff9341ff,soccer_uefa_nations_league
-MILLI,06/10/2026,19:45,Luxembourg,Bulgaria,,,2.21,3.11,3.43,2.41,1.52,2.34,3.30,3.70,2.58,1.56,2.34,3.25,3.70,,,2026-10-06T18:45:00Z,ed18949608b83e25d1556c5081e43ba8,soccer_uefa_nations_league
-MILLI,06/10/2026,19:45,Moldova,Slovakia,,,8.02,4.58,1.38,1.74,2.00,9.60,5.00,1.43,1.82,2.08,9.60,5.00,1.43,,,2026-10-06T18:45:00Z,e32fea4406b5fdba3a733019ad3059ad,soccer_uefa_nations_league
-MILLI,06/10/2026,19:45,Scotland,Slovenia,,,1.79,3.34,4.84,2.34,1.56,1.88,3.65,5.30,2.47,1.60,1.88,3.50,5.30,,,2026-10-06T18:45:00Z,bc11b98f6ba1da1f5d5d051fd14cd197,soccer_uefa_nations_league
-MILLI,06/10/2026,19:45,Switzerland,North Macedonia,,,1.08,10.64,32.43,1.46,2.62,1.10,13.50,50.00,1.47,2.62,1.10,13.50,44.00,,,2026-10-06T18:45:00Z,fefdbdc59cf8fd0495796f9b372d0152,soccer_uefa_nations_league
