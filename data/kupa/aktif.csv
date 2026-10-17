@@ -1,1 +1,3 @@
 Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,AvgH,AvgD,AvgA,Avg>2.5,Avg<2.5,MaxH,MaxD,MaxA,Max>2.5,Max<2.5,PSH,PSD,PSA,P>2.5,P<2.5,Kickoff,EventId,Sport
+CL,20/10/2026,17:45,Fenerbahce,Slavia Praha,,,1.66,4.09,4.71,1.64,2.26,1.74,4.31,5.10,1.69,2.40,1.68,4.13,4.62,1.67,2.40,2026-10-20T16:45:00Z,16e237246e9bef441e69998d1ef9536d,soccer_uefa_champs_league
+CL,20/10/2026,17:45,Sabah FK,Borussia Dortmund,,,8.76,5.92,1.30,1.39,2.97,10.00,6.40,1.36,1.40,3.03,8.68,6.01,1.29,,,2026-10-20T16:45:00Z,464c74a35c648d4910cc16976ce2f7cd,soccer_uefa_champs_league
