@@ -1,12 +1,19 @@
 Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,AvgH,AvgD,AvgA,Avg>2.5,Avg<2.5,MaxH,MaxD,MaxA,Max>2.5,Max<2.5,PSH,PSD,PSA,P>2.5,P<2.5,Kickoff,EventId,Sport
-CL,20/10/2026,17:45,Fenerbahce,Slavia Praha,,,1.66,4.11,4.74,1.63,2.25,1.74,4.31,5.10,1.69,2.36,1.69,4.25,4.75,1.66,2.42,2026-10-20T16:45:00Z,16e237246e9bef441e69998d1ef9536d,soccer_uefa_champs_league
-CL,20/10/2026,17:45,Sabah FK,Borussia Dortmund,,,8.95,5.95,1.30,1.40,2.92,10.00,6.40,1.35,1.41,2.95,8.99,6.10,1.31,,,2026-10-20T16:45:00Z,464c74a35c648d4910cc16976ce2f7cd,soccer_uefa_champs_league
-CL,20/10/2026,20:00,AS Roma,ŠK Slovan Bratislava,,,1.16,8.03,16.23,1.30,3.51,1.19,9.00,20.00,1.30,3.57,1.17,8.42,15.42,,,2026-10-20T19:00:00Z,e3b50e57c4cf46191ab068d1e880e595,soccer_uefa_champs_league
-CL,20/10/2026,20:00,Liverpool,Villarreal,,,1.48,4.70,5.97,1.48,2.64,1.55,4.96,6.40,1.50,2.72,1.49,4.96,6.11,,,2026-10-20T19:00:00Z,b9567e9c3df909f8f6f21425b4b38d3f,soccer_uefa_champs_league
-CL,20/10/2026,20:00,Manchester City,AEK Athens,,,1.08,11.77,25.42,1.29,3.67,1.13,14.10,34.00,1.30,3.75,1.10,11.81,21.38,,,2026-10-20T19:00:00Z,00625830dd764a06f12f78c0d0a72ff8,soccer_uefa_champs_league
-CL,20/10/2026,20:00,Napoli,Bodø/Glimt,,,1.60,4.41,4.98,1.47,2.64,1.67,4.67,5.40,1.49,2.66,1.64,4.51,4.90,,,2026-10-20T19:00:00Z,49dba87d5ac664efdf2a64c72db31702,soccer_uefa_champs_league
-CL,20/10/2026,20:00,Paris Saint Germain,Barcelona,,,2.38,4.44,2.46,1.19,4.65,2.50,4.70,2.58,1.20,4.79,2.36,4.70,2.51,,,2026-10-20T19:00:00Z,46b790335fa98338b7e1ed0b614078fb,soccer_uefa_champs_league
-CL,20/10/2026,20:00,Porto,PSV Eindhoven,,,1.64,4.38,4.67,1.52,2.50,1.71,4.71,5.10,1.54,2.51,1.64,4.71,4.67,,,2026-10-20T19:00:00Z,0686ce05e8489734fd66e5ee97fbbfa2,soccer_uefa_champs_league
-CL,20/10/2026,20:00,VfB Stuttgart,Atlético Madrid,,,3.25,3.79,2.08,1.52,2.52,3.50,4.00,2.18,1.53,2.54,3.32,3.86,2.11,,,2026-10-20T19:00:00Z,56989e10c299aba1a0fce210bb214775,soccer_uefa_champs_league
-CL,21/10/2026,17:45,Como,Manchester United,,,2.28,3.72,2.88,1.64,2.27,2.38,3.90,3.05,1.70,2.42,2.31,3.90,2.90,1.69,2.42,2026-10-21T16:45:00Z,8af9379136075f45b290208b35a706c8,soccer_uefa_champs_league
-CL,21/10/2026,17:45,Lille,Galatasaray,,,2.16,3.67,3.12,1.68,2.19,2.24,3.85,3.35,1.73,2.36,2.19,3.79,3.20,1.69,2.36,2026-10-21T16:45:00Z,015d619d774655965e17ba67a025634e,soccer_uefa_champs_league
+CL,20/10/2026,17:45,Fenerbahce,Slavia Praha,,,1.67,4.14,4.68,1.63,2.26,1.74,4.32,5.10,1.69,2.41,1.68,4.32,4.78,1.66,2.42,2026-10-20T16:45:00Z,16e237246e9bef441e69998d1ef9536d,soccer_uefa_champs_league
+CL,20/10/2026,17:45,Sabah FK,Borussia Dortmund,,,9.23,6.07,1.29,1.38,3.01,10.50,6.40,1.35,1.39,3.03,9.23,6.23,1.30,,,2026-10-20T16:45:00Z,464c74a35c648d4910cc16976ce2f7cd,soccer_uefa_champs_league
+CL,20/10/2026,20:00,AS Roma,ŠK Slovan Bratislava,,,1.16,8.01,15.53,1.29,3.57,1.20,9.00,19.00,1.30,3.66,1.19,7.75,14.20,,,2026-10-20T19:00:00Z,e3b50e57c4cf46191ab068d1e880e595,soccer_uefa_champs_league
+CL,20/10/2026,20:00,Liverpool,Villarreal,,,1.47,4.81,6.08,1.44,2.76,1.54,5.04,6.75,1.45,2.80,1.48,5.04,6.15,,,2026-10-20T19:00:00Z,b9567e9c3df909f8f6f21425b4b38d3f,soccer_uefa_champs_league
+CL,20/10/2026,20:00,Manchester City,AEK Athens,,,1.09,11.51,24.50,1.25,3.94,1.13,12.80,32.00,1.25,4.01,1.10,12.04,21.70,,,2026-10-20T19:00:00Z,00625830dd764a06f12f78c0d0a72ff8,soccer_uefa_champs_league
+CL,20/10/2026,20:00,Napoli,Bodø/Glimt,,,1.61,4.41,4.95,1.46,2.68,1.66,4.70,5.40,1.47,2.72,1.61,4.57,5.02,,,2026-10-20T19:00:00Z,49dba87d5ac664efdf2a64c72db31702,soccer_uefa_champs_league
+CL,20/10/2026,20:00,Paris Saint Germain,Barcelona,,,2.39,4.54,2.42,1.18,4.84,2.50,4.80,2.52,1.19,4.91,2.42,4.74,2.43,,,2026-10-20T19:00:00Z,46b790335fa98338b7e1ed0b614078fb,soccer_uefa_champs_league
+CL,20/10/2026,20:00,Porto,PSV Eindhoven,,,1.60,4.48,4.97,1.50,2.58,1.64,4.83,5.50,1.50,2.63,1.58,4.83,5.05,,,2026-10-20T19:00:00Z,0686ce05e8489734fd66e5ee97fbbfa2,soccer_uefa_champs_league
+CL,20/10/2026,20:00,VfB Stuttgart,Atlético Madrid,,,3.20,3.77,2.10,1.51,2.54,3.40,4.00,2.24,1.52,2.56,3.27,3.85,2.14,,,2026-10-20T19:00:00Z,56989e10c299aba1a0fce210bb214775,soccer_uefa_champs_league
+CL,21/10/2026,17:45,Como,Manchester United,,,2.29,3.70,2.90,1.62,2.29,2.38,3.85,3.10,1.70,2.42,2.29,3.83,2.98,1.69,2.42,2026-10-21T16:45:00Z,8af9379136075f45b290208b35a706c8,soccer_uefa_champs_league
+CL,21/10/2026,17:45,Lille,Galatasaray,,,2.16,3.68,3.13,1.65,2.25,2.26,3.85,3.35,1.72,2.42,2.19,3.74,3.22,1.67,2.42,2026-10-21T16:45:00Z,015d619d774655965e17ba67a025634e,soccer_uefa_champs_league
+CL,21/10/2026,20:00,Aston Villa,Viking FK,,,1.23,6.50,11.47,1.30,3.47,1.29,7.40,13.00,1.30,3.57,1.24,6.65,11.76,,,2026-10-21T19:00:00Z,d3b3e714b6af9e5430e3030ed639e6dd,soccer_uefa_champs_league
+CL,21/10/2026,20:00,Bayern Munich,Arsenal,,,2.06,3.81,3.28,1.61,2.31,2.15,4.05,3.45,1.65,2.46,2.06,4.05,3.31,1.64,2.46,2026-10-21T19:00:00Z,2ebbccdeea2dab59717d5c3d802c3fed,soccer_uefa_champs_league
+CL,21/10/2026,20:00,Club Brugge,RC Lens,,,2.04,3.91,3.25,1.54,2.49,2.15,4.20,3.45,1.57,2.57,2.07,3.98,3.33,,,2026-10-21T19:00:00Z,d306a78e402e5f505e8644fdf3f75dcd,soccer_uefa_champs_league
+CL,21/10/2026,20:00,Inter Milan,Shakhtar Donetsk,,,1.20,7.53,12.58,1.29,3.60,1.24,8.25,15.00,1.30,3.66,1.19,8.05,13.21,,,2026-10-21T19:00:00Z,a889456204e8ef1b64294efbee8dc3e5,soccer_uefa_champs_league
+CL,21/10/2026,20:00,Real Betis,Feyenoord,,,1.50,4.83,5.50,1.36,3.11,1.58,5.10,6.25,1.36,3.18,1.54,4.91,5.41,,,2026-10-21T19:00:00Z,f5905225efa837b0dc89b7dcdbb6c625,soccer_uefa_champs_league
+CL,21/10/2026,20:00,Real Madrid,RB Leipzig,,,1.25,6.91,9.73,1.21,4.41,1.29,7.50,11.00,1.22,4.53,1.24,7.29,9.81,,,2026-10-21T19:00:00Z,30f27b8e9719e9ae71c25b4c8aa265f7,soccer_uefa_champs_league
+CL,21/10/2026,20:00,Sporting Lisbon,LASK,,,1.22,7.17,11.32,1.32,3.44,1.25,8.00,13.00,1.33,3.51,1.22,7.63,10.97,,,2026-10-21T19:00:00Z,8fdcaee14b3e8966e09d468a0b17ce18,soccer_uefa_champs_league
