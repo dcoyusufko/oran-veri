@@ -2,18 +2,8 @@ Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,AvgH,AvgD,AvgA,Avg>2.5,Avg<2.5,MaxH,Ma
 ECL,22/10/2026,20:00,AGF Aarhus,KF Egnatia,,,1.45,4.43,6.48,1.64,2.22,1.50,4.80,7.20,1.73,2.32,1.47,4.61,6.86,1.73,2.30,2026-10-22T19:00:00Z,df5f5668179bea6bf108b01eb9012f58,soccer_uefa_europa_conference_league
 ECL,22/10/2026,20:00,AS Monaco,SC Freiburg,,,2.19,3.52,3.15,1.72,2.08,2.26,3.75,3.40,1.75,2.16,2.22,3.53,3.29,1.79,2.24,2026-10-22T19:00:00Z,7a11fc32685c99c9ed6ec787445d8f08,soccer_uefa_europa_conference_league
 ECL,22/10/2026,20:00,Ajax,Atalanta BC,,,2.03,3.76,3.31,1.45,2.63,2.16,4.00,3.55,1.48,2.70,2.00,3.94,3.49,,,2026-10-22T19:00:00Z,bfeac7c5e82e272db139b6b0bba91304,soccer_uefa_europa_conference_league
-EL,22/10/2026,20:00,Besiktas JK,Crystal Palace,,,2.21,3.73,2.95,1.51,2.56,2.34,3.90,3.10,1.53,2.60,2.28,3.76,3.04,,,2026-10-22T19:00:00Z,7b1674efd0f6f93a16f202822f4b64b5,soccer_uefa_europa_league
-EL,22/10/2026,20:00,Bournemouth,AC Milan,,,1.96,3.73,3.60,1.70,2.12,2.06,4.00,3.85,1.75,2.20,2.06,3.73,3.56,,,2026-10-22T19:00:00Z,af99d0f507da72d045d9403ae167a5a8,soccer_uefa_europa_league
-EL,22/10/2026,20:00,Celtic,Celta Vigo,,,2.69,3.50,2.51,1.72,2.11,2.84,3.75,2.64,1.78,2.32,2.73,3.55,2.60,1.74,2.32,2026-10-22T19:00:00Z,c614844f2e3b782814e4f4e77f98bf2a,soccer_uefa_europa_league
 ECL,22/10/2026,20:00,FC Midtjylland,Sint Truiden,,,1.67,3.98,4.69,1.61,2.35,1.73,4.30,5.10,1.64,2.52,1.67,4.15,4.94,1.64,2.52,2026-10-22T19:00:00Z,94de0a2ab801eb05de1cd843fe81be37,soccer_uefa_europa_conference_league
 ECL,22/10/2026,20:00,FC Thun,Hajduk Split,,,2.85,3.56,2.30,1.59,2.32,3.00,3.78,2.40,1.66,2.46,2.88,3.72,2.37,1.66,2.46,2026-10-22T19:00:00Z,d96bdb46a20ce9e66021e2356a90f7cf,soccer_uefa_europa_conference_league
 ECL,22/10/2026,20:00,FK Borac Banja Luka,KuPS Kuopio,,,1.80,3.53,4.40,1.95,1.85,1.88,3.75,4.90,2.08,1.92,1.83,3.56,4.66,2.06,1.83,2026-10-22T19:00:00Z,31593142c4077b2efdb19f5ce52c2972,soccer_uefa_europa_conference_league
-EL,22/10/2026,20:00,Jagiellonia Białystok,Anderlecht,,,3.04,3.54,2.24,1.72,2.07,3.25,3.70,2.34,1.79,2.12,3.18,3.57,2.28,1.81,2.12,2026-10-22T19:00:00Z,573ca8b5bb0abdb338c4004d610b1824,soccer_uefa_europa_league
-EL,22/10/2026,20:00,Lillestrom,Real Sociedad,,,6.26,4.80,1.45,1.56,2.39,6.85,5.10,1.51,1.63,2.50,6.44,4.91,1.47,1.66,2.44,2026-10-22T19:00:00Z,9be240eead573e6718f4ba21ed1a6472,soccer_uefa_europa_league
 ECL,22/10/2026,20:00,Lincoln Red Imps FC,FC Twente Enschede,,,13.09,6.75,1.20,1.39,2.91,15.00,7.60,1.24,1.40,2.92,13.28,7.28,1.20,,,2026-10-22T19:00:00Z,cd9065192081742e3e287645d0c2de00,soccer_uefa_europa_conference_league
-EL,22/10/2026,20:00,NK Celje,Salzburg,,,5.88,4.41,1.51,1.58,2.33,6.60,4.61,1.57,1.65,2.50,5.88,4.61,1.54,1.65,2.50,2026-10-22T19:00:00Z,e342a49042c35c6a3f3e8720324b3f3c,soccer_uefa_europa_league
-EL,22/10/2026,20:00,Olympiakos Piraeus,Sparta Prague,,,1.49,4.39,6.22,1.72,2.08,1.54,4.70,7.00,1.81,2.18,1.51,4.52,6.41,1.81,2.18,2026-10-22T19:00:00Z,5290ae078657c841a4e1d4ebb626825a,soccer_uefa_europa_league
-EL,22/10/2026,20:00,Omonoia FC,Benfica,,,8.50,5.42,1.32,1.51,2.47,10.00,6.00,1.36,1.54,2.60,8.84,5.76,1.33,,,2026-10-22T19:00:00Z,86b70325b671e4bdf5b970aa6cd85bb3,soccer_uefa_europa_league
 ECL,22/10/2026,20:00,SC Braga,Gent,,,1.89,3.49,4.09,2.18,1.69,1.95,3.70,4.40,2.26,1.78,1.88,3.64,4.24,2.26,1.78,2026-10-22T19:00:00Z,e2bf033627c92831f81ad76703839d72,soccer_uefa_europa_conference_league
-EL,22/10/2026,20:00,TSG Hoffenheim,Lyon,,,2.05,3.98,3.18,1.48,2.66,2.16,4.20,3.50,1.50,2.69,2.11,4.04,3.19,,,2026-10-22T19:00:00Z,b3c60081286aa25692de7e0a482b6c01,soccer_uefa_europa_league
-EL,22/10/2026,20:00,Viktoria Plzeň,PFC Levski Sofia,,,1.70,3.94,4.65,1.71,2.09,1.77,4.10,5.00,1.80,2.20,1.71,4.08,4.84,1.80,2.20,2026-10-22T19:00:00Z,410fd021774146ae969af3713990ed87,soccer_uefa_europa_league
