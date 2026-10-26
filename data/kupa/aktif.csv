@@ -1,9 +1,1 @@
 Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,AvgH,AvgD,AvgA,Avg>2.5,Avg<2.5,MaxH,MaxD,MaxA,Max>2.5,Max<2.5,PSH,PSD,PSA,P>2.5,P<2.5,Kickoff,EventId,Sport
-ECL,22/10/2026,20:00,AGF Aarhus,KF Egnatia,,,1.45,4.43,6.48,1.64,2.22,1.50,4.80,7.20,1.73,2.32,1.47,4.61,6.86,1.73,2.30,2026-10-22T19:00:00Z,df5f5668179bea6bf108b01eb9012f58,soccer_uefa_europa_conference_league
-ECL,22/10/2026,20:00,AS Monaco,SC Freiburg,,,2.19,3.52,3.15,1.72,2.08,2.26,3.75,3.40,1.75,2.16,2.22,3.53,3.29,1.79,2.24,2026-10-22T19:00:00Z,7a11fc32685c99c9ed6ec787445d8f08,soccer_uefa_europa_conference_league
-ECL,22/10/2026,20:00,Ajax,Atalanta BC,,,2.03,3.76,3.31,1.45,2.63,2.16,4.00,3.55,1.48,2.70,2.00,3.94,3.49,,,2026-10-22T19:00:00Z,bfeac7c5e82e272db139b6b0bba91304,soccer_uefa_europa_conference_league
-ECL,22/10/2026,20:00,FC Midtjylland,Sint Truiden,,,1.67,3.98,4.69,1.61,2.35,1.73,4.30,5.10,1.64,2.52,1.67,4.15,4.94,1.64,2.52,2026-10-22T19:00:00Z,94de0a2ab801eb05de1cd843fe81be37,soccer_uefa_europa_conference_league
-ECL,22/10/2026,20:00,FC Thun,Hajduk Split,,,2.85,3.56,2.30,1.59,2.32,3.00,3.78,2.40,1.66,2.46,2.88,3.72,2.37,1.66,2.46,2026-10-22T19:00:00Z,d96bdb46a20ce9e66021e2356a90f7cf,soccer_uefa_europa_conference_league
-ECL,22/10/2026,20:00,FK Borac Banja Luka,KuPS Kuopio,,,1.80,3.53,4.40,1.95,1.85,1.88,3.75,4.90,2.08,1.92,1.83,3.56,4.66,2.06,1.83,2026-10-22T19:00:00Z,31593142c4077b2efdb19f5ce52c2972,soccer_uefa_europa_conference_league
-ECL,22/10/2026,20:00,Lincoln Red Imps FC,FC Twente Enschede,,,13.09,6.75,1.20,1.39,2.91,15.00,7.60,1.24,1.40,2.92,13.28,7.28,1.20,,,2026-10-22T19:00:00Z,cd9065192081742e3e287645d0c2de00,soccer_uefa_europa_conference_league
-ECL,22/10/2026,20:00,SC Braga,Gent,,,1.89,3.49,4.09,2.18,1.69,1.95,3.70,4.40,2.26,1.78,1.88,3.64,4.24,2.26,1.78,2026-10-22T19:00:00Z,e2bf033627c92831f81ad76703839d72,soccer_uefa_europa_conference_league
