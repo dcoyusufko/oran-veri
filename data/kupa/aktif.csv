@@ -1,3 +1,10 @@
 Div,Date,Time,HomeTeam,AwayTeam,FTHG,FTAG,AvgH,AvgD,AvgA,Avg>2.5,Avg<2.5,MaxH,MaxD,MaxA,Max>2.5,Max<2.5,PSH,PSD,PSA,P>2.5,P<2.5,Kickoff,EventId,Sport
-CL,03/11/2026,17:45,Galatasaray,VfB Stuttgart,,,2.17,4.03,2.87,1.40,2.89,2.33,4.30,3.10,1.41,2.95,2.14,4.24,2.89,,,2026-11-03T17:45:00Z,9b8076d3ffa027df6f6cb3189de46706,soccer_uefa_champs_league
-CL,03/11/2026,17:45,Shakhtar Donetsk,Sporting Lisbon,,,3.62,3.74,1.95,1.67,2.17,3.90,3.96,2.05,1.73,2.33,3.63,3.88,1.93,1.73,2.22,2026-11-03T17:45:00Z,55e0f74a61f7d72defa7ea0c83532ea5,soccer_uefa_champs_league
+CL,03/11/2026,17:45,Galatasaray,VfB Stuttgart,,,2.15,4.06,2.88,1.40,2.91,2.27,4.33,3.05,1.41,2.97,2.17,4.33,2.94,,,2026-11-03T17:45:00Z,9b8076d3ffa027df6f6cb3189de46706,soccer_uefa_champs_league
+CL,03/11/2026,17:45,Shakhtar Donetsk,Sporting Lisbon,,,3.61,3.75,1.95,1.68,2.17,3.90,3.96,2.06,1.74,2.33,3.70,3.96,1.96,1.74,2.24,2026-11-03T17:45:00Z,55e0f74a61f7d72defa7ea0c83532ea5,soccer_uefa_champs_league
+CL,03/11/2026,20:00,Atlético Madrid,Bayern Munich,,,2.77,3.89,2.29,1.42,2.84,2.95,4.10,2.46,1.43,2.87,2.84,3.97,2.34,,,2026-11-03T20:00:00Z,61b42fd619617a7a2a3770c2444e8a40,soccer_uefa_champs_league
+CL,03/11/2026,20:00,Barcelona,Aston Villa,,,1.24,6.95,9.81,1.20,4.52,1.29,7.80,11.50,1.20,4.61,1.26,7.22,9.35,,,2026-11-03T20:00:00Z,bd680c6ad693dae859030f86e1be2769,soccer_uefa_champs_league
+CL,03/11/2026,20:00,Bodø/Glimt,Lille,,,1.83,4.00,3.84,1.49,2.60,1.92,4.30,4.10,1.50,2.66,1.85,4.16,3.95,,,2026-11-03T20:00:00Z,1a5a84045050d0d7baf1301909d3b465,soccer_uefa_champs_league
+CL,03/11/2026,20:00,Feyenoord,Inter Milan,,,3.97,4.22,1.76,1.40,2.94,4.25,4.50,1.89,1.40,2.98,3.98,4.45,1.79,,,2026-11-03T20:00:00Z,f6f3cf01c2b20b7f746b5a06097a0569,soccer_uefa_champs_league
+CL,03/11/2026,20:00,LASK,ŠK Slovan Bratislava,,,1.42,5.00,6.47,1.42,2.89,1.50,5.30,7.60,1.44,2.97,1.45,5.23,6.57,,,2026-11-03T20:00:00Z,adf608a0e9be02eb1d8b0a6f464a12b1,soccer_uefa_champs_league
+CL,03/11/2026,20:00,Manchester United,AS Roma,,,2.30,3.92,2.72,1.51,2.51,2.44,4.20,2.88,1.53,2.57,2.32,4.13,2.79,,,2026-11-03T20:00:00Z,bc0b6614c9714816038d5a0ff8963144,soccer_uefa_champs_league
+CL,03/11/2026,20:00,Villarreal,Paris Saint Germain,,,4.73,4.59,1.60,1.34,3.29,5.10,4.80,1.69,1.34,3.32,4.74,4.73,1.64,,,2026-11-03T20:00:00Z,a341241606cb5b1b59e425d00be64883,soccer_uefa_champs_league
